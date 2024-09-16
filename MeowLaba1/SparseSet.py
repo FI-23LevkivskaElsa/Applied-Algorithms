@@ -89,7 +89,8 @@ class SparseSet:
             print(self.dense[i], end=' ')
         print()
 
-Set = SparseSet(65536, 65536)
+#перевірка операцій insert, delete, search, clear
+"""Set = SparseSet(65536, 65536)
 for x in random.sample(range(1, 10), 7):
     Set.insert(x)
 print("Множина А:")
@@ -107,9 +108,10 @@ else:
 
 Set.clear()
 print("Множина А:")
-Set.print()
+Set.print()"""
 
-Set1 = SparseSet(65536, 65536)
+#перевірка операцій union, intersection, set difference, sym difference, is_subset
+"""Set1 = SparseSet(65536, 65536)
 for x in random.sample(range(1, 8), 7):
     Set1.insert(x)
 print("Множина А:")
@@ -132,4 +134,32 @@ Set5.print()
 Set6 = Set1.sym_difference(Set2)
 print("Симетрична різниця множин А і В:")
 Set6.print()
-IsSubset = Set2.is_subset(Set1)
+IsSubset = Set2.is_subset(Set1)"""
+
+#знаходження даних для експериментів
+"""Set = SparseSet(65536, 65536)
+for x in random.sample(range(1, 65536), 65000):
+    Set.insert(x)
+TimeSearch = timeit.timeit('Set.search(5000)', globals=globals(), number=1000)
+print(f"Час виконання операції пошуку: {TimeSearch} секунд для 1000 пошуків")"""
+
+"""Set1 = SparseSet(65536, 65536)
+for x in random.sample(range(1, 65536), 65000):
+    Set1.insert(x)
+Set2 = SparseSet(65536, 65536)
+for y in random.sample(range(1, 65536), 65000):
+    Set2.insert(y)
+TimeUnion = timeit.timeit('Set1.union(Set2)', globals=globals(), number=100)
+print(f"Час виконання об'єднання : {TimeUnion} секунд для 100 об'єднань")"""
+
+#побудова графіків
+"""x = [1000, 5000, 10000, 15000, 20000, 25000, 30000, 35000, 40000, 45000, 50000, 55000, 60000, 65000]
+y1 = [0.47*10**(-6), 0.442*10**(-6), 0.475*10**(-6), 0.453*10**(-6), 0.446*10**(-6), 0.45*10**(-6), 0.48*10**(-6), 0.47*10**(-6), 0.475*10**(-6), 0.45*10**(-6), 0.44*10**(-6), 0.45*10**(-6), 0.46*10**(-6), 0.459*10**(-6)]
+y2 = [0.485*10**(-6), 0.5*10**(-6), 0.51*10**(-6), 0.487*10**(-6), 0.508*10**(-6), 0.52*10**(-6), 0.5*10**(-6), 0.52*10**(-6), 0.51*10**(-6), 0.5*10**(-6), 0.5*10**(-6), 0.517*10**(-6), 0.5*10**(-6), 0.5*10**(-6)]
+y3 = [0.003, 0.014, 0.032, 0.047, 0.065, 0.079, 0.097, 0.115, 0.138, 0.147, 0.17, 0.175, 0.206, 0.212]
+
+plt.plot(x, y3, label='Квадрати')
+plt.title('Операція Union')
+plt.xlabel('Розмір множин')
+plt.ylabel('Час виконання операції')
+plt.show()"""
