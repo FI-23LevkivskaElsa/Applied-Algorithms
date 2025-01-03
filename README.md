@@ -14,3 +14,5 @@
 Завдання №6: MergeSort;
 
 Завдання №7: QuickSort;
+
+Завдання №8: HeapSort;
